@@ -1,0 +1,1801 @@
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.main {
+  padding: 2rem;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.app-header h1 {
+  color: #333;
+  margin: 0;
+}
+
+.content-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.main-panel {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* パネル切り替えボタンのスタイル */
+.panel-toggle {
+  display: flex;
+  gap: 0;
+  background: #f5f5f5;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.toggle-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: none;
+  background: none;
+  color: #666;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-button i {
+  font-size: 1.2rem;
+}
+
+.toggle-button:hover {
+  color: #2196F3;
+}
+
+.toggle-button.active {
+  color: #2196F3;
+  position: relative;
+}
+
+.toggle-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #2196F3;
+}
+
+/* パネルのスタイル */
+.panel {
+  padding: 2rem;
+}
+
+.projects-panel, .tasks-panel {
+  background: white;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.add-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #45a049;
+}
+
+.project-item {
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.project-header h3 {
+  font-size: 1rem;
+}
+
+.task-item {
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.task-header h3 {
+  font-size: 0.95rem;
+}
+
+.task-description {
+  font-size: 0.85rem;
+}
+
+.task-meta {
+  font-size: 0.8rem;
+}
+
+.task-status select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.task-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.task-content p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-button {
+  background: none;
+  border: 1px solid #2196F3;
+  color: #2196F3;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edit-button:hover {
+  background: #2196F3;
+  color: white;
+}
+
+.delete-button {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.delete-button:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* フォーム関連のスタイル */
+.project-form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 100%;
+  box-sizing: border-box;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #2196F3;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.required {
+  color: red;
+  margin-left: 0.25rem;
+}
+
+/* プロジェクトタイトル */
+.project-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+/* タグ関連のスタイル */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+}
+
+.tag {
+  background: #e3f2fd;
+  color: #2196F3;
+  padding: 0.35rem 0.85rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.category-tag {
+  background: #2196F3;
+  color: white;
+}
+
+/* プログレスバー */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #8BC34A);
+  transition: width 0.3s ease;
+}
+
+/* ビュー切り替えボタンのスタイル改善 */
+.view-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-right: 1rem;
+  flex-wrap: wrap;
+}
+
+.view-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-button i {
+  font-size: 1.2rem;
+}
+
+.view-button:hover {
+  background: #f5f5f5;
+  border-color: #2196F3;
+  color: #2196F3;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(33, 150, 243, 0.1);
+}
+
+.view-button.active {
+  background: #2196F3;
+  color: white;
+  border-color: #2196F3;
+  box-shadow: 0 2px 4px rgba(33, 150, 243, 0.2);
+}
+
+.view-button.active:hover {
+  background: #1976D2;
+}
+
+/* アカウントボタンのスタイル改善 */
+.account-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #2196F3;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.account-button:hover {
+  background: #1976D2;
+  transform: scale(1.05);
+}
+
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #f44336;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+/* タスクフォームのスタイル */
+.task-form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #e0e0e0;
+  animation: slideDown 0.3s ease;
+}
+
+/* タスクリストの改善 */
+.task-list {
+  max-height: 600px;
+  overflow-y: auto;
+  will-change: transform;  /* パフォーマンス最適化 */
+}
+
+.task-status {
+  min-width: 120px;
+}
+
+.task-status select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  background: white;
+  cursor: pointer;
+}
+
+.task-status select[value="completed"] {
+  color: #4CAF50;
+  border-color: #4CAF50;
+}
+
+.task-status select[value="in-progress"] {
+  color: #2196F3;
+  border-color: #2196F3;
+}
+
+.task-content {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.task-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.task-content p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.no-tasks, .no-project-selected {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  background: #f5f5f5;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+/* 日時入力フィールドのスタイル改善 */
+.datetime-range {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.datetime-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.datetime-input .sublabel {
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.inputs-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.inputs-wrapper input[type="date"],
+.inputs-wrapper input[type="time"] {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #333;
+  background: white;
+  box-sizing: border-box;
+}
+
+.inputs-wrapper input[type="date"] {
+  flex: 3;
+  min-width: 130px;
+}
+
+.inputs-wrapper input[type="time"] {
+  flex: 2;
+  min-width: 100px;
+}
+
+.inputs-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+  margin-left: 0;
+  margin-right: -0.5rem;
+}
+
+.inputs-wrapper input[type="time"]::-webkit-calendar-picker-indicator {
+  margin-left: 0;
+  margin-right: -0.5rem;
+}
+
+.inputs-wrapper input:focus {
+  border-color: #2196F3;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+}
+
+/* プロジェクト日付表示の改善 */
+.project-dates {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0.75rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.task-count {
+  font-size: 0.95rem;
+  color: #666;
+  background: #f5f5f5;
+  padding: 0.35rem 0.85rem;
+  border-radius: 12px;
+}
+
+.save-button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.save-button:hover {
+  background: #45a049;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(76, 175, 80, 0.2);
+}
+
+.cancel-button {
+  background: none;
+  border: 1px solid #666;
+  color: #666;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.cancel-button:hover {
+  background: #f5f5f5;
+  border-color: #333;
+  color: #333;
+}
+
+/* タスク日付表示のスタイル */
+.task-dates {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.task-dates .duration {
+  color: #2196F3;
+  font-weight: 500;
+  background: #e3f2fd;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* プロジェクトタスクグループのスタイル */
+.project-tasks {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-task-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.project-task-header {
+  margin: 0;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.task-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.task-item {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.task-item:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.task-header h5 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.task-description {
+  color: #666;
+  margin: 0.75rem 0;
+  font-size: 0.95rem;
+}
+
+.task-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  flex-wrap: wrap;
+}
+
+.task-status {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.task-status.not-started {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.task-status.in-progress {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.task-status.completed {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.virtual-scroll-viewport {
+  height: calc(100vh - 200px);
+  width: 100%;
+}
+
+/* その他のスタイル定義は既存のものを維持 */
+
+.project-tasks {
+  margin-bottom: 24px;
+}
+
+.project-task-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 0;
+}
+
+.project-task-header {
+  margin: 0;
+  color: #333;
+  font-size: 1.2em;
+}
+
+.add-task-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-task-button:hover {
+  background: #45a049;
+}
+
+.task-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ボード表示のスタイル */
+.board-view {
+  padding: 0.75rem;
+}
+
+.board-columns {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.board-column {
+  min-width: 150px;
+  max-width: 200px;
+  padding: 0.35rem;
+}
+
+.board-column h3 {
+  font-size: 0.8rem;
+  margin-bottom: 0.35rem;
+  padding-bottom: 0.25rem;
+}
+
+.board-tasks {
+  gap: 0.15rem;
+}
+
+.board-task {
+  padding: 0.35rem;
+  font-size: 0.8rem;
+  max-width: 100%;
+}
+
+.task-header h4 {
+  font-size: 0.8rem;
+  max-width: calc(100% - 20px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.task-badges {
+  font-size: 0.75rem;
+  gap: 0.25rem;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.task-status {
+  padding: 0.1rem 0.25rem;
+  font-size: 0.75rem;
+}
+
+.task-assignee {
+  font-size: 0.75rem;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.task-description {
+  font-size: 0.75rem;
+  margin: 0.25rem 0;
+  max-width: 100%;
+}
+
+.task-meta {
+  font-size: 0.75rem;
+  gap: 0.25rem;
+  max-width: 100%;
+}
+
+.project-name, .task-dates {
+  max-width: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.task-actions button {
+  padding: 0.1rem 0.25rem;
+  font-size: 0.75rem;
+  min-height: 18px;
+}
+
+/* タスク編集モーダル */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-edit-form {
+  background: white;
+  border-radius: 3px;
+  padding: 0.75rem;
+  width: 90%;
+  max-width: 450px;
+}
+
+.task-edit-form h3 {
+  margin: 0 0 0.75rem 0;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.task-edit-form .form-group {
+  margin-bottom: 0.5rem;
+}
+
+.task-edit-form label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.8rem;
+}
+
+.task-edit-form input,
+.task-edit-form textarea,
+.task-edit-form select {
+  width: 100%;
+  padding: 0.35rem;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 0.8rem;
+}
+
+.task-edit-form .datetime-range {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.task-edit-form .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #eee;
+}
+
+/* バーンダウンチャートのスタイル */
+.burndown-view {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+}
+
+.burndown-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.burndown-container h2 {
+  margin: 0 0 2rem 0;
+  color: #333;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.project-selector {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.project-selector label {
+  margin-right: 1rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.project-selector select {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  min-width: 300px;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-selector select:hover {
+  border-color: #2196F3;
+}
+
+.project-selector select:focus {
+  outline: none;
+  border-color: #2196F3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.burndown-chart {
+  margin-top: 2rem;
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.burndown-chart h3 {
+  margin: 0 0 2rem 0;
+  color: #333;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.progress-table {
+  margin-top: 2rem;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.progress-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.progress-table th,
+.progress-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.progress-table th {
+  background: #f8f9fa;
+  font-weight: 500;
+  color: #333;
+}
+
+.progress-table td {
+  color: #666;
+}
+
+.no-project-message {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #666;
+  background: #f8f9fa;
+  border-radius: 12px;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  border: 2px dashed #e0e0e0;
+}
+
+.project-info {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.project-info .info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 150px;
+}
+
+.project-info .label {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.project-info .value {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.project-info .info-item:nth-child(1) .value {
+  color: #2196F3;
+}
+
+.project-info .info-item:nth-child(2) .value {
+  color: #4CAF50;
+}
+
+.project-info .info-item:nth-child(3) .value {
+  color: #FF9800;
+}
+
+@media (max-width: 768px) {
+  .project-info {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .project-info .info-item {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* 検索ビューのスタイル */
+.search-view {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.search-container h2 {
+  margin: 0 0 2rem 0;
+  color: #333;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.search-form {
+  margin-bottom: 2rem;
+}
+
+.search-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #2196F3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.search-filters {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.search-filters label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.search-filters input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.search-result-item {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.search-result-item:hover {
+  border-color: #2196F3;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.1);
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.result-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.result-type {
+  padding: 0.35rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.result-type.project {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.result-type.task {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.result-type.bigProject {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.result-type.subProject {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.result-type.subProjectTask {
+  background: #fce4ec;
+  color: #c2185b;
+}
+
+.result-description {
+  color: #666;
+  margin: 0.75rem 0;
+  font-size: 0.95rem;
+}
+
+.result-meta {
+  display: flex;
+  gap: 1rem;
+  margin: 0.75rem 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.status-badge.not-started {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.status-badge.in-progress {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.status-badge.completed {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-badge.planning {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.status-badge.active {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.status-badge.on-hold {
+  background: #fce4ec;
+  color: #c2185b;
+}
+
+.result-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.view-button,
+.edit-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-button {
+  background: #e3f2fd;
+  color: #1976d2;
+  border: 1px solid #1976d2;
+}
+
+.view-button:hover {
+  background: #1976d2;
+  color: white;
+}
+
+.edit-button {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #2e7d32;
+}
+
+.edit-button:hover {
+  background: #2e7d32;
+  color: white;
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  color: #666;
+  font-size: 1.1rem;
+  border: 2px dashed #e0e0e0;
+}
+
+/* 認証関連のスタイル */
+.account-section {
+  position: relative;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.auth-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.auth-button:hover {
+  background: #f5f5f5;
+  border-color: #2196F3;
+  color: #2196F3;
+}
+
+.user-menu {
+  position: relative;
+}
+
+.user-menu:hover .user-dropdown {
+  display: block;
+}
+
+.user-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  min-width: 200px;
+  z-index: 1000;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.user-role {
+  font-size: 0.85rem;
+  color: #666;
+  background: #f5f5f5;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  background: #ffebee;
+  color: #c62828;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout-button:hover {
+  background: #c62828;
+  color: white;
+}
+
+.auth-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.auth-form {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.auth-form h2 {
+  margin: 0 0 2rem 0;
+  color: #333;
+  text-align: center;
+}
+
+.name-fields {
+  display: flex;
+  gap: 1rem;
+}
+
+.name-fields .form-group {
+  flex: 1;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+.error-message {
+  color: #c62828;
+  background: #ffebee;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.auth-links {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #2196F3;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.link-button:hover {
+  text-decoration: underline;
+}
+
+.login-button,
+.register-button {
+  background: #2196F3;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.login-button:hover,
+.register-button:hover {
+  background: #1976D2;
+}
+
+/* ボード表示のタスク編集フォームのスタイル */
+.board-task .task-edit-form-inline {
+  position: relative;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.board-task .task-edit-form-inline .form-group {
+  margin-bottom: 0.75rem;
+}
+
+.board-task .task-edit-form-inline label {
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.board-task .task-edit-form-inline input,
+.board-task .task-edit-form-inline textarea,
+.board-task .task-edit-form-inline select {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.board-task .task-edit-form-inline .datetime-range {
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.board-task .task-edit-form-inline .datetime-input {
+  width: 100%;
+}
+
+.board-task .task-edit-form-inline .inputs-wrapper {
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.board-task .task-edit-form-inline .inputs-wrapper input {
+  width: 100%;
+}
+
+.board-task .task-edit-form-inline .form-actions {
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* ガントチャートのスタイル */
+.gantt-view {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gantt-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.gantt-header {
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.gantt-header-row {
+  display: flex;
+}
+
+.gantt-task-info {
+  width: 200px;
+  padding: 0.75rem;
+  border-right: 1px solid #e0e0e0;
+}
+
+.gantt-timeline {
+  flex: 1;
+  position: relative;
+  min-width: 800px;
+}
+
+.gantt-months {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.gantt-month {
+  flex: 1;
+  text-align: center;
+  padding: 0.75rem;
+  font-weight: 500;
+  color: #333;
+  border-right: 1px solid #e0e0e0;
+}
+
+.gantt-body {
+  position: relative;
+}
+
+.gantt-task-row {
+  display: flex;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 0.5rem 0;
+  min-height: 60px;
+}
+
+.gantt-task-info {
+  width: 200px;
+  padding: 0.5rem;
+  position: relative;
+}
+
+.task-name {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+
+.task-assignee {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.gantt-timeline {
+  flex: 1;
+  position: relative;
+  min-height: 50px;
+}
+
+.gantt-task-bar {
+  position: absolute;
+  height: 24px;
+  top: 13px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  opacity: 0.8;
+}
+
+.gantt-task-bar:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.task-bar-tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+
+.task-bar-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid rgba(0, 0, 0, 0.8);
+}
+
+.gantt-task-bar:hover .task-bar-tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -35px;
+}
+
+/* ガントチャートのタスク行のホバー効果 */
+.gantt-task-row {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.gantt-task-row:hover {
+  background-color: #f5f5f5;
+}
+
+/* ガントチャートのタスクバーの色 */
+.gantt-task-bar.not-started {
+  background-color: #FFE4B5;
+}
+
+.gantt-task-bar.in-progress {
+  background-color: #2196F3;
+}
+
+.gantt-task-bar.completed {
+  background-color: #4CAF50;
+}
+
+.task-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem;
+  margin-top: 0.15rem;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.65rem;
+  border-radius: 8px;
+  background: #f0f0f0;
+  color: #555;
+  line-height: 1.2;
+  max-width: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status-chip.not-started { background: #fff0f0; color: #d32f2f; }
+.status-chip.in-progress { background: #e8f4fd; color: #0d47a1; }
+.status-chip.completed   { background: #e8f5e9; color: #1b5e20; }
+
+.project-chip { background: #e3f2fd; color: #1976d2; }
+.date-chip    { background: #f5f5f5; color: #666; }
+
+/* タスクツールチップのスタイル */
+.board-task {
+  position: relative;
+}
+
+.task-tooltip {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  left: 100%;
+  top: 0;
+  margin-left: 8px;
+  width: 250px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 0.75rem;
+  pointer-events: none;
+}
+
+.board-task:hover .task-tooltip {
+  display: block;
+}
+
+.tooltip-content {
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.tooltip-header {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.tooltip-description {
+  color: #666;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.tooltip-meta {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.tooltip-meta > div {
+  margin: 0.25rem 0;
+}
+
+/* 最後のカラムのツールチップは左側に表示 */
+.board-column:last-child .task-tooltip {
+  left: auto;
+  right: 100%;
+  margin-left: 0;
+  margin-right: 8px;
+}
+
+/* ツールチップの矢印 */
+.task-tooltip::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  background: white;
+  transform: rotate(45deg);
+  box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.05);
+}
+
+.board-column:last-child .task-tooltip::before {
+  left: auto;
+  right: -4px;
+  box-shadow: 2px -2px 3px rgba(0, 0, 0, 0.05);
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  padding: 1rem 1rem;
+  margin: 2rem 0;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.chart-body {
+  position: relative;
+  height: calc(100% - 3rem);
+  margin: 0 0 3rem 3rem;
+  overflow: visible;
+}
